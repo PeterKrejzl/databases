@@ -68,8 +68,7 @@ select * from tmp_test_peter
 
 No errors, a row inserted but let's select from the table. 
 
-You see it? Newly inserted record has an ID = 11 meaning all these ignored inserts incremented identity column in the table!
-`11 record 2 2016-02-02 07:54:17`
+You see it? Newly inserted record has an ID much higher than expected meaning all these ignored inserts incremented identity column in the table!
 
 ##### INSERT ON DUPLICATE UPDATE
 ```
