@@ -2,11 +2,11 @@ As I'm coming from Microsoft SQL Server environment, working with MySQL is const
 
 Here are just a couple of interesting MySQL features I found useful for my work. This time they are all related to inserting or updating data.
 
-# INSERT IGNORE
+### INSERT IGNORE
 A row that duplicates an existing unique index or primary key is ignored and no warning generated.
 !!!!! Do not use when inserting into table with auto generated primary key column (either single or composite). It will still generate an id but never insert it.
 
-# INSERT ON DUPLICATE UPDATE
+### INSERT ON DUPLICATE UPDATE
 Similar to INSERT IGNORE but moreover it you can specify an update clause like:
 
 `insert into User (col1, col2, col3) values (v1, v2, v3) on duplicate update col3 = current_timestamp()`
