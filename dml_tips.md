@@ -2,22 +2,22 @@ As I'm coming from Microsoft SQL Server environment, working with MySQL is const
 
 Here are just a couple of interesting MySQL features I found useful for my work. This time they are all related to inserting or updating data.
 
-### INSERT IGNORE
+###### INSERT IGNORE
 A row that duplicates an existing unique index or primary key is ignored and no warning generated.
-!!!!! Do not use when inserting into table with auto generated primary key column (either single or composite). It will still generate an id but never insert it.
+**!!!!!** Do not use when inserting into table with auto generated primary key column (either single or composite). It will still generate an id but never insert it.
 
-### INSERT ON DUPLICATE UPDATE
+###### INSERT ON DUPLICATE UPDATE
 Similar to INSERT IGNORE but moreover it you can specify an update clause like:
 
 `insert into User (col1, col2, col3) values (v1, v2, v3) on duplicate update col3 = current_timestamp()`
 
-REPLACE (= insert or delete + insert)
+######REPLACE (= insert or delete + insert)
 If there is no such row in the table it is inserted. If it already exists, it is deleted first and then reinserted.
 
-INSERT DELAYED
+######INSERT DELAYED
 Useful for clients that cannot wait until insert is done. Server confirms the query and then it is put into the queue until a table is not used by other processes. It is obviously slower than a normal INSERT and also these rows until inserted are stored in the memory only. So, there is a higher chance of losing them.
 
-INSERT LOW_PRIORITY
+######INSERT LOW_PRIORITY
 Low_priority insert execution is delayed until no other clients are reading from the table. It is possible that such an insert will wait for a long time (theoretically forever :) )
 
 Examples
