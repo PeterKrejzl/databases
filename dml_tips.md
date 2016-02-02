@@ -32,15 +32,17 @@ unique index un_Record (Record)
 
 
 1) INSERT IGNORE
+```
 insert into tmp_test_peter (Record) values ('record 1');
 insert into tmp_test_peter (Record) values ('record 1');
+```
 
 As expected we will get:
 
-Error Code: 1062. Duplicate entry 'record 1' for key 'un_Record'
+`Error Code: 1062. Duplicate entry 'record 1' for key 'un_Record'`
 
 One more try with IGNORE now. 
-insert IGNORE into tmp_test_peter (Record) values ('record 1');
+`insert IGNORE into tmp_test_peter (Record) values ('record 1');`
 0 row(s) affected
 
 No records inserted but also no errors.
@@ -48,10 +50,12 @@ No records inserted but also no errors.
 
 
 Let's run it a couple of more times:
+```
 insert IGNORE into tmp_test_peter (Record) values ('record 1');
 insert IGNORE into tmp_test_peter (Record) values ('record 1');
 insert IGNORE into tmp_test_peter (Record) values ('record 1');
 insert IGNORE into tmp_test_peter (Record) values ('record 1');
+```
 
 
 Still ok :) But what if we run another insert with different value:
@@ -62,18 +66,20 @@ select * from tmp_test_peter
 No errors, a row inserted but let's select from the table. 
 
 You see it? Newly inserted record has an ID = 11 meaning all these ignored inserts incremented identity column in the table!
-11 record 2 2016-02-02 07:54:17
+`11 record 2 2016-02-02 07:54:17`
 
 2) INSERT ON DUPLICATE UPDATE
-
+```
 insert into tmp_test_peter (Record)
 values ('record 1')
 on duplicate key update ModifiedDate = current_timestamp()
 
 select * from tmp_test_peter
-
+```
 3) REPLACE
 
+```
 replace into tmp_test_peter (Record) values ('record 3');
 
 select * from tmp_test_peter
+```
