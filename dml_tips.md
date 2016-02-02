@@ -1,6 +1,6 @@
-As I'm coming from Microsoft SQL Server environment, working with MySQL is constantly surprising me in many ways, both good and bad :) In contrast to MS SQL we need to focus significantly more on the performance of our queries and be prepared that everything is not as easy as in MS SQL world :)
+As I'm coming from Microsoft SQL Server environment, working with MySQL is constantly surprising me in many ways, both good and bad :) In contrast to MS SQL I need to focus significantly more on the performance of our queries and be prepared that everything is not as easy as in MS SQL world :)
 
-Here are just a couple of interesting MySQL features I found useful for my work. This time they are all related to inserting or updating data.
+Here are just a couple of interesting MySQL features I found useful for my work. This time they are all related to inserting or updating a data.
 
 ##### INSERT IGNORE
 A row that duplicates an existing unique index or primary key is ignored and no warning generated.
