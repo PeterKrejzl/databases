@@ -8,7 +8,7 @@ A row that duplicates an existing unique index or primary key is ignored and no 
 **!!!!!** Do not use when inserting into table with auto generated primary key column (either single or composite). It will still generate an id but never insert it.
 
 ##### INSERT ON DUPLICATE UPDATE
-Similar to INSERT IGNORE but moreover it you can specify an update clause like:
+Similar to INSERT IGNORE but moreover one can specify an update clause like:
 
 `insert into User (col1, col2, col3) values (v1, v2, v3) on duplicate update col3 = current_timestamp()`
 
