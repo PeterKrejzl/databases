@@ -21,7 +21,7 @@ Useful for clients that cannot wait until insert is done. Server confirms the qu
 ##### INSERT LOW_PRIORITY
 Low_priority insert execution is delayed until no other clients are reading from the table. It is possible that such an insert will wait for a long time (theoretically forever :) )
 
-##### Examples
+###### Examples
 ```
 create table if not exists tmp_test_peter 
 (
@@ -44,8 +44,10 @@ As expected we will get:
 `Error Code: 1062. Duplicate entry 'record 1' for key 'un_Record'`
 
 One more try with **IGNORE** now. 
-`insert IGNORE into tmp_test_peter (Record) values ('record 1');`
-`0 row(s) affected`
+```
+insert IGNORE into tmp_test_peter (Record) values ('record 1');
+0 row(s) affected
+```
 
 No records inserted but also no errors.
 
